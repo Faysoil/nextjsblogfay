@@ -18,9 +18,9 @@ export default function createblog({user}) {
                   postedBy:user.uid,
                   createdAt:serverTimestamp()
               })
-              M.toast({html: 'Blog Created',classes:"green"})   
+              M.toast({html: 'Blog Créer',classes:"green"})   
             }catch(err){
-                M.toast({html:'error creating blog',classes:"red"})    
+                M.toast({html:'erreur à la création du blog',classes:"red"})    
             }
               
 
@@ -29,7 +29,7 @@ export default function createblog({user}) {
 
     const SubmitDetails = ()=>{
         if (!title || !body || !image){
-            M.toast({html: 'please add all the fields',classes:"red"})    
+            M.toast({html: 'Ajoutez un fichier',classes:"red"})    
             return
         }
        var uploadTask = storage.ref().child(`image/${uuidv4()}`).put(image)
@@ -79,7 +79,7 @@ export default function createblog({user}) {
                     <input className="file-path validate" type="text" />
                 </div>
              </div>
-             <button className="btn #fb8c00 orange darken-1" onClick={()=>SubmitDetails()}>Submit Post</button>
+             <button className="btn #fb8c00 orange darken-1" onClick={()=>SubmitDetails()}>Poster</button>
 
              <style jsx>
                  {`

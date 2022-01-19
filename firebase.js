@@ -4,12 +4,12 @@ import 'firebase/firestore'
 import 'firebase/storage'
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAF18MtIIMYpfa9fYih1uQcnjc9EtbU9co",
-  authDomain: "nextjsblogfay.firebaseapp.com",
-  projectId: "nextjsblogfay",
-  storageBucket: "nextjsblogfay.appspot.com",
-  messagingSenderId: "972136465751",
-  appId: "1:972136465751:web:c9a2210fcad424118d6a12"
+  apiKey: "AIzaSyAnZqtBDCsf0ssD8aGskaPedqi0nqhqoaQ",
+  authDomain: "nextjsblogfay-2dfdd.firebaseapp.com",
+  projectId: "nextjsblogfay-2dfdd",
+  storageBucket: "nextjsblogfay-2dfdd.appspot.com",
+  messagingSenderId: "501553862449",
+  appId: "1:501553862449:web:15fc6326ab334065c04210"
 };
 
 
