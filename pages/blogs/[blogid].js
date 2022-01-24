@@ -8,7 +8,7 @@ export default function blogpage({blog,user,allComments}) {
      const router = useRouter()
      const { blogid } = router.query
      const makeCommet = async ()=>{
-       
+       // collecte les données des commentaire pour le smettre sur la base de données
         await db.collection('blogs').doc(blogid).collection('comments').add({
              text:myComment,
              name:user.displayName
@@ -17,10 +17,11 @@ export default function blogpage({blog,user,allComments}) {
         setAllComments(commentQuery.docs.map(docSnap=>docSnap.data()))
 
      }
+     //C'est le bloc servant à publier les posts
     return (
         <div className="container center">
             <h2>{blog.title}</h2>
-            <h5>Created On - {new Date(blog.createdAt).toDateString()}</h5>
+            <h5>Publiée le - {new Date(blog.createdAt).toDateString()}</h5>
             <img src={blog.imageUrl} alt={blog.title} />
             <p>{blog.body}</p>
 
@@ -28,13 +29,13 @@ export default function blogpage({blog,user,allComments}) {
             <>
             <div className="input-field">
                 <input type="text" 
-                placeholder="add a comment" 
+                placeholder="ajouter un commentaire" 
                 value={myComment} 
                 onChange={(e)=>setMyComment(e.target.value)}/>
             </div>
-            <button className="btn #fb8c00 orange darken-1" onClick={()=>makeCommet()}>Make comment</button>
+            <button className="btn #fb8c00 orange darken-1" onClick={()=>makeCommet()}>Commenter</button>
             </>
-            :<h3>please login to make comments</h3>
+            :<h3>Veuillez vous connecter pour pouvoir commenter</h3>
             }
             
             <hr />

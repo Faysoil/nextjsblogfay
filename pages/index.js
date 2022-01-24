@@ -38,17 +38,19 @@ export default function Home({Allblogs}) {
               <p>{blog.body}</p>
             </div>
             <div className="card-action">
-              <Link href={`/blogs/${blog.id}`}><a>Read More</a></Link>
+              <Link href={`/blogs/${blog.id}`}><a>Voir plus</a></Link>
             </div>
           </div>
           )
         })}
 
+
         {end==false?
-        <button className="btn #fb8c00 orange darken-1" onClick={()=>loadMore()}>Load more</button>
-         :<h3>You have reached end</h3>
+        <button className="btn #fb8c00 orange darken-1" onClick={()=>loadMore()}>Voir plus</button>
+         :<h3>FIN</h3>
         }
-        
+    
+           
 
         <style jsx>
            {`
