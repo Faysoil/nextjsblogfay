@@ -4,7 +4,7 @@ export default function NavBar({user}) {
     
     return (
         <nav>
-        <div className="nav-wrapper #fb8c00 orange darken-1">
+        <div className="nav-wrapper #fb8c00 blue darken-1">
           <Link href="/"><a className="brand-logo">Blog de Fay</a></Link>
           <ul id="nav-mobile" className="right">
             {user?

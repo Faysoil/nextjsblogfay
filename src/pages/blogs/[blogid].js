@@ -22,7 +22,7 @@ export default function blogpage({blog,user,allComments}) {
         <div className="container center">
             <h2>{blog.title}</h2>
             <h5>Publiée le - {new Date(blog.createdAt).toDateString()}</h5>
-            <img src={blog.imageUrl} alt={blog.title} />
+            <center><img src={blog.imageUrl} alt={blog.title} /></center>
             <p>{blog.body}</p>
 
             {user?
@@ -35,9 +35,14 @@ export default function blogpage({blog,user,allComments}) {
             </div>
             <button className="btn #fb8c00 orange darken-1" onClick={()=>makeCommet()}>Commenter</button>
             </>
-            :<h3>Veuillez vous connecter pour pouvoir commenter</h3>
-            }
+            :
+                <div className='notconnect1'>
+                <span class="notconnect2">Déconnectée</span>
+                <span class="notconnect">Veuillez vous connecter pour pouvoir commenter</span>
+            </div>
             
+            
+            }
             <hr />
             <div className="left-align">
 

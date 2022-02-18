@@ -4,12 +4,57 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-image: url("https://firmsolutions.fr/wp-content/uploads/2017/04/wallpaper-fonds-decran-Arriere-plan-pour-site-web-2.0-FULL-HD.jpg");
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: blue;
+  text-decoration:none;
 }
+  .signup {
+      @apply m-5 shadow-lg rounded-lg overflow-hidden
+      bg-blue-200
+  }
+  .sigle{
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/19/19/43/nature-2659682_1280.jpg");
+    @apply lg:w-3/5 lg:pr-0 pr-0
+  }
+
+  .template-one{
+    @apply grid gap-4 grid-cols-3 grid-rows-3
+  }
+  .centre{
+      @apply bg-center
+    }
+  .dateur{ 
+    @apply bg-blue-700
+    rounded
+    inline-block
+    text-center
+    py-1
+    px-4
+    text-xs
+    leading-loose
+    font-semibold
+    text-white  
+    mb-5  
+  }
+  .boldt{
+    @apply font-extrabold sm:text-4xl
+    md:text-[40px]
+    text-3xl
+  }
+
+  .notconnect1{
+    @apply inline-flex items-center bg-white leading-none text-blue-600 rounded-full p-2 shadow text-sm
+  }
+
+  .notconnect2{
+    @apply inline-flex bg-blue-600 text-white rounded-full h-6 px-3 justify-center items-center
+  }
+  .notconnect{
+    @apply inline-flex px-2
+  }
 
 * {
   box-sizing: border-box;
@@ -17,6 +62,6 @@ a {
 .input-field input[type=text]:focus,
 .input-field input[type=email]:focus,
 .input-field input[type=password]:focus {
-  border-bottom: 2px solid orange !important;
+  border-bottom: 2px solid rgb(0, 225, 255) !important;
   box-shadow: none !important;
 }

@@ -18,9 +18,9 @@ export default function createblog({user}) {
                   postedBy:user.uid,
                   createdAt:serverTimestamp()
               })
-              M.toast({html: 'Blog Créer',classes:"green"})   
+              M.toast({html: 'Blog posté',classes:"green"})   
             }catch(err){
-                M.toast({html:'erreur à la création du blog',classes:"red"})    
+                M.toast({html:'erreur à la création du post',classes:"red"})    
             }
               
 
@@ -55,7 +55,7 @@ export default function createblog({user}) {
     }
     return (
         <div className="input-field rootdiv">
-            <h3>Créer un blog</h3>
+            <h3>Publier un post</h3>
             <input
             type="text"
             value={title} 

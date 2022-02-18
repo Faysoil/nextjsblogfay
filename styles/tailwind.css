@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+
+}
+
+@layer components {
+  .card{
+      @apply m-5 shadow-lg rounded-lg overflow-hidden
+  }
+
+}

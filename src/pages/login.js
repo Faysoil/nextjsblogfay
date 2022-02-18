@@ -15,19 +15,23 @@ export default function login() {
         }
         
      }
-   
     return (
+      
         <div className="container center">
             <h3>Comme on se retrouve</h3>
              <form onSubmit={(e)=>handleSubmit(e)}>
-                 <div className="input-field">
-                     <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-                     <input type="password" placeholder="Mot de passe" value={password} onChange={(e)=>setPassword(e.target.value)} />
+                 <div className="input-field signup">
+                   Email
+                   <div className='white signup'><input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} /></div>
+                     Mot de passe
+                     <div className='white signup'><input type="password" placeholder="Mot de passe" value={password} onChange={(e)=>setPassword(e.target.value)} /></div>
                  </div>
                  <button type="submit" className="btn #fb8c00 orange darken-1">Login</button>
                 <Link href="/signup"><a><h5>Pas inscrit</h5></a></Link>
              </form>
             
         </div>
+        
     )
+    
 }

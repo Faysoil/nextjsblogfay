@@ -1,7 +1,6 @@
 import {db} from '../firebase'
 import Link from 'next/link'
 import {useState} from 'react'
-
 export default function Home({Allblogs}) {
    const [blogs,setblogs] = useState(Allblogs)
    const [end,setEnd] = useState(false)
@@ -26,46 +25,53 @@ export default function Home({Allblogs}) {
      }
    }
   return (
-    <div className="center">
+
+    <div className="center template-one">
         {blogs.map(blog=>{
           return(
             <div className="card" key={blog.createdAt}>
             <div className="card-image">
               <img src={blog.imageUrl} />
-              <span className="card-title">{blog.title}</span>
+              <span class="dateur"><h9> {new Date(blog.createdAt).toDateString()}</h9></span>
+              
             </div>
+            <div className='boldt'><Link href={`/blogs/${blog.id}`}><a><span className="card-title">{blog.title}</span></a></Link></div>
+
             <div className="card-content">
               <p>{blog.body}</p>
+              
             </div>
-            <div className="card-action">
-              <Link href={`/blogs/${blog.id}`}><a>Voir plus</a></Link>
-            </div>
+            
           </div>
           )
         })}
 
-
+        
         {end==false?
-        <button className="btn #fb8c00 orange darken-1" onClick={()=>loadMore()}>Voir plus</button>
+        <div classname="centre bg-center">
+        <button className="btn #fb8c00 blue darken-1" onClick={()=>loadMore()}>Voir plus</button>
+         </div>
          :<h3>FIN</h3>
+         
         }
     
-           
-
         <style jsx>
            {`
             .card{
               max-width:500px;
               margin:22px auto;
+              
             }
             p{
               display: -webkit-box;
               overflow: hidden;
-              -webkit-line-clamp: 1;
+              font-bold;
+              -webkit-line-clamp: 3;
               -webkit-box-orient: vertical;
             }
            `}
         </style>
+        
     </div>
   )
 }
@@ -75,7 +81,7 @@ export async function getServerSideProps(context) {
   const querySnap =await  db.collection('blogs').orderBy('createdAt',"desc")
   .limit(3)
   .get()
-  const Allblogs =  querySnap.docs.map(docSnap=>{
+   const Allblogs =  querySnap.docs.map(docSnap=>{
     return {
       ...docSnap.data(),
       createdAt:docSnap.data().createdAt.toMillis(),
@@ -85,6 +91,6 @@ export async function getServerSideProps(context) {
 
 
   return {
-    props: {Allblogs}, // will be passed to the page component as props
+    props: {Allblogs},
   }
 }

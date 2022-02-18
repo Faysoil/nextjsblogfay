@@ -1,9 +1,9 @@
-import '../styles/globals.css'
+import '../../styles/globals.css'
 import Head from 'next/head'
 import NavBar from '../components/NavBar'
 import {auth} from '../firebase'
 import {useEffect,useState} from 'react'
-
+<link rel="stylesheet" href="style.css"/>
 function MyApp({ Component, pageProps }) {
    const [user,setUser] = useState(null)
   useEffect(()=>{
@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
          else setUser(null)
        })
   },[])
+  
   return(
     <>
      <Head>
